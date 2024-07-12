@@ -1,24 +1,17 @@
-const express = require('express');
-const app = express();
-const port = process.env.PORT || 3000;
-
-// 健康檢查路徑
-app.get('/health', (req, res) => {
-  res.status(200).send('OK');
-});
-
-// Discord bot 相關程式碼
 const { Client, GatewayIntentBits } = require('discord.js');
+
 const ROOM_STATUS = {
   ONLINE: 'ONLINE',
   OFFLINE: 'OFFLINE'
 };
 
-const token = process.env.TOKEN;
-const channelId = process.env.CHANNEL_ID;
-const roomId = process.env.ROOM_ID;
+// Discord bot token and channel ID
+const token = '';
+const channelId = '';
+const roomId = '';
 
 const client = new Client({ intents: [GatewayIntentBits.Guilds] });
+
 let currentStatus = ROOM_STATUS.OFFLINE;
 
 client.once('ready', () => {
@@ -29,7 +22,7 @@ client.once('ready', () => {
 
 async function checkLiveStatus() {
   try {
-    const fetch = require('node-fetch');
+    const fetch = await import('node-fetch').then(mod => mod.default); // 動態加載 node-fetch 模塊
     const roomLiveInfoUrl = `https://api.live.bilibili.com/xlive/web-room/v1/index/getInfoByRoom?room_id=${roomId}`;
     const response = await fetch(roomLiveInfoUrl);
     const json = await response.json();
@@ -39,7 +32,7 @@ async function checkLiveStatus() {
       throw new Error('Bili API responded with an error status.');
     }
 
-    const { room_info } = data;
+    const { room_info, anchor_info } = data;
     let status = ROOM_STATUS.OFFLINE;
     if (room_info.live_status === 1) {
       status = ROOM_STATUS.ONLINE;
@@ -63,8 +56,3 @@ async function checkLiveStatus() {
 }
 
 client.login(token);
-
-// 啟動 Express 伺服器
-app.listen(port, () => {
-  console.log(`Server is running on http://localhost:${port}`);
-});
