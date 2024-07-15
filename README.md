@@ -17,16 +17,19 @@ const channelId = '想通知的discord頻道id';
 const roomId = '想監測的bilibili直播間id'; 
 
 
-◉1.discord機器人token按下reset後會顯示(請保存好，離開頁面後就不可再讀取，除非reset過)
+◉1.discord機器人token按下reset token後會顯示(請保存好，離開頁面後就不可再讀取，除非reset過)
 ![image](https://github.com/user-attachments/assets/33c92d70-7d41-43a1-a609-eddc676a5538)
+
 
   
 ◉2.discord頻道id 可在discord設定裡的進階選項開啟開發者模式後
 ![image](https://github.com/user-attachments/assets/a79ee7e9-13ce-413b-bb6e-d8ea88b43703)
 
 
+
 ◉右鍵想讓機器人通知的頻道，最下面就是複製id的選項如下圖
 ![image](https://github.com/user-attachments/assets/10347246-6098-418b-a7b5-652d06993a78)
+
 
 
 ◉3.的直播間id為https://live.bilibili.com/XXXXXXX中的XXXXXXX
