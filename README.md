@@ -46,7 +46,7 @@ const roomId = '想監測的bilibili直播間id';
 ◉取好名字後按下底部的Deploy
 ![image](https://github.com/user-attachments/assets/7153236c-0d96-420e-8517-8363ad3bf277)
 
-◉點擊Portal Servers下方的剛剛取好的名字(這步大概率會要你再登入一次，直接按下方的forgot password，會引導到密碼的地方，按下show後複製就好了)
+◉點擊Portal Servers下方剛取好的名字(這步會要你再登入一次，直接按下方的forgot password，會引導到密碼的地方，按下show後複製)
 ![image](https://github.com/user-attachments/assets/62d7f314-200d-4eff-a7af-ea9076efad0a)
 
 ◉按下Control
