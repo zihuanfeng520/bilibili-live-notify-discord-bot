@@ -4,8 +4,7 @@
 ## 使用教學事項
 
 ## 1.註冊Discord機器人
-請先用下面網址註冊一個Discord機器人，並把權限全開（我沒研究哪些權限用的到所以我全開）  
-[https://discord.com/developers/applications](https://discord.com/developers/applications)  
+請先用[https://discord.com/developers/applications](https://discord.com/developers/applications)  註冊一個Discord機器人，並把權限全開（我沒研究哪些權限用的到所以我全開）  
 ![image](https://github.com/user-attachments/assets/e9c5eef4-8c95-497f-aa23-4fbb6570e825)
 
 ## 2.修改index檔案
