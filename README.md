@@ -4,8 +4,9 @@
 ## 使用教學事項
 
 ## 1.註冊Discord機器人
-◉請先用[https://discord.com/developers/applications](https://discord.com/developers/applications)  註冊一個Discord機器人，在左側的OAuth2中勾選下面兩個選項（我沒研究哪些權限用的到所以我全開）  ，最下方的連結可以邀請機器人到你想要通知的伺服器
-![image](https://github.com/user-attachments/assets/49e147a4-1db3-4197-8339-852376c82352)
+◉請先用[https://discord.com/developers/applications](https://discord.com/developers/applications)  註冊一個Discord機器人，在左側的OAuth2中勾選下面兩個選項（我沒研究哪些權限用的到所以我全開），最下方的連結可以邀請機器人到你想要通知的伺服器
+![image](https://github.com/user-attachments/assets/265e74af-725f-46db-bf90-a1cb2342bb79)
+
 
 
 ## 2.下載並修改index檔案
