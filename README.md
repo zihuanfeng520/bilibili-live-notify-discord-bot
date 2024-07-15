@@ -1,7 +1,7 @@
 # Bilibili開播/下播通知Discord機器人
 目前使用 [https://portal.daki.cc/](https://portal.daki.cc/) 免費託管。該程式目前僅支持單一頻道通知與單一直播間進行監測。
 
-## 使用注意事項
+## 使用教學事項
 
 ### 1. 註冊Discord機器人
 請先用下面網址註冊一個Discord機器人，並把權限全開（我沒研究哪些權限用的到所以我全開）  
