@@ -15,9 +15,9 @@
 2. Discord頻道ID
 3. Bilibili直播間ID
 
-const token = 'discord機器人token';
-const channelId = '想通知的discord頻道id';
-const roomId = '想監測的bilibili直播間id';
+const token = 'discord機器人token'; 
+const channelId = '想通知的discord頻道id'; 
+const roomId = '想監測的bilibili直播間id'; 
 
 其中1.discord機器人token按下reset後會顯示(請保存好，離開頁面後就不可再讀取，除非reset過)
 ![image](https://github.com/user-attachments/assets/33c92d70-7d41-43a1-a609-eddc676a5538)
