@@ -5,7 +5,7 @@ const ROOM_STATUS = {
   OFFLINE: 'OFFLINE'
 };
 
-// Discord 機器人的 Token 和頻道 IDs
+// Discord bot token and channel ID
 const token = '';
 const channelIds = ['', '']; // 假設這是兩個不同的頻道 ID
 const roomIds = ['', '', '']; // 假設這是三個不同的房間 ID
