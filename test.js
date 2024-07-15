@@ -49,10 +49,10 @@ async function checkLiveStatuses() {
         currentStatuses[roomId] = status; // 更新當前狀態
 
         if (status === ROOM_STATUS.ONLINE) {
-          const message = `直播已開始！房間標題：${room_info.title}\n\n房間鏈接：https://live.bilibili.com/${room_info.room_id}\n\n[封面連結](${room_info.cover})\n`;
+          const message = `---------------------------------------------------------\n直播已開始！\n\n房間標題：${room_info.title}\n\n房間連結：https://live.bilibili.com/${room_info.room_id}\n\n[封面連結](${room_info.cover})\n---------------------------------------------------------`;
           await sendToAllChannels(message);
         } else {
-          const message = `直播已結束！房間標題：${room_info.title}\n\n房間鏈接：https://live.bilibili.com/${room_info.room_id}\n\n[封面連結](${room_info.cover})\n`;
+          const message = `---------------------------------------------------------\n直播已結束！\n\n房間標題：${room_info.title}\n\n房間連結：https://live.bilibili.com/${room_info.room_id}\n\n[封面連結](${room_info.cover})\n---------------------------------------------------------`;
           await sendToAllChannels(message);
         }
       }
@@ -76,3 +76,4 @@ async function sendToAllChannels(message) {
 }
 
 client.login(token);
+
