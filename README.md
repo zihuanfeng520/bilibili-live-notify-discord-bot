@@ -51,6 +51,7 @@ const roomId = '想監測的bilibili直播間id';
 
 
 然後我們就創好了!
+
 ![image](https://github.com/user-attachments/assets/62d7f314-200d-4eff-a7af-ea9076efad0a)
 
 
