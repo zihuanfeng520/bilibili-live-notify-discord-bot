@@ -16,7 +16,7 @@ const client = new Client({ intents: [GatewayIntentBits.Guilds, GatewayIntentBit
 let currentStatus = ROOM_STATUS.OFFLINE;
 
 client.once('ready', () => {
-  console.log('Discord bot is online!');
+  console.log('Discord 機器人已上線！');
   checkLiveStatus();
   setInterval(checkLiveStatus, 60000); // 每分鐘檢查一次
 
@@ -51,7 +51,7 @@ async function checkLiveStatus() {
 
     const { data, code } = json;
     if (code !== 0 || !data) {
-      throw new Error('Bili API responded with an error status.');
+      throw new Error('房間 ${roomId} 的 Bili API 回應錯誤狀態。');
     }
 
     const { room_info, anchor_info } = data;
@@ -73,7 +73,7 @@ async function checkLiveStatus() {
       }
     }
   } catch (error) {
-    console.error('Error fetching live room info:', error);
+    console.error('錯誤：獲取直播房間信息時出現錯誤。', error);
   }
 }
 
@@ -82,7 +82,7 @@ async function sendToChannel(message) {
     const channel = await client.channels.fetch(channelId);
     await channel.send(message);
   } catch (error) {
-    console.error(`Error sending message to channel ${channelId}:`, error);
+      console.error(`錯誤：向頻道 ${channelId} 發送消息時出現錯誤。`, error);
   }
 }
 
