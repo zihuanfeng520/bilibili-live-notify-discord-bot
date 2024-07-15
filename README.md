@@ -8,11 +8,7 @@
 ![image](https://github.com/user-attachments/assets/e9c5eef4-8c95-497f-aa23-4fbb6570e825)
 
 ## 2.修改index檔案
-請在index檔案裡把9~11行const程式後的''裡面依序修改成自己的：
-
-1. Discord機器人token
-2. Discord頻道ID
-3. Bilibili直播間ID
+請在index檔案裡把9~11行const程式後的''裡面依序修改成自己的
 
 const token = 'discord機器人token';
 
