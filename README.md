@@ -1,5 +1,5 @@
 # Bilibili開播/下播通知Discord機器人
-目前使用 [https://portal.daki.cc/](https://portal.daki.cc/) 免費託管。該程式目前僅支持單一頻道通知與單一直播間進行監測。
+目前使用 [https://portal.daki.cc/](https://portal.daki.cc/) 免費託管。該程式目前僅支持單一discord頻道通知 與 單一直播間進行監測
 
 ## 使用教學事項
 
