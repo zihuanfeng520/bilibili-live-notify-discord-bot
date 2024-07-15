@@ -10,9 +10,9 @@
 ## 2.修改index檔案
 請在index檔案裡把9~11行const程式後的''裡面依序修改成自己的：
 
-◉1. Discord機器人token
-◉2. Discord頻道ID
-◉3. Bilibili直播間ID
+1. Discord機器人token
+2. Discord頻道ID
+3. Bilibili直播間ID
 
 const token = 'discord機器人token';
 
