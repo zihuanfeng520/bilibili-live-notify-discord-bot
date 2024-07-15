@@ -32,7 +32,7 @@ const roomId = '想監測的bilibili直播間id';
 
 ◉修改完後保存index.js檔案
 
-## 3.註冊 並託管https://portal.daki.cc/ 帳號
+## 3.註冊 https://portal.daki.cc/ 帳號並託管機器人
 ◉如果是第一次註冊直接按下面的forgot password，因為這個網站沒有註冊按鈕
 (註冊時會要求discord登入，綁定後就可以退出該discord群組)
 
