@@ -58,11 +58,11 @@ const roomId = '想監測的bilibili直播間id';
 點擊Portal Servers下方的剛剛取好的名字(這步大概率會要你再登入一次，直接按下方的forgot password，會引導到密碼的地方，按下show後複製就好了)
 
 
-按下control
+按下Control
 ![image](https://github.com/user-attachments/assets/da0dc96d-2306-4ada-9ae5-7800f45a26ed)
 
 
-點擊上方的files
+點擊上方的Files
 ![image](https://github.com/user-attachments/assets/6e8485b8-ce7e-455a-ae97-841d8125b16d)
 
 
