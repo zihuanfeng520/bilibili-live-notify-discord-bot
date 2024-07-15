@@ -62,4 +62,7 @@ const roomId = '想監測的bilibili直播間id';
 ◉然後按下Console後，在按下Start
 ![image](https://github.com/user-attachments/assets/326c84ee-8439-4dca-8f91-36589b98cae6)
 
+◉初次運行會跑一些代碼是正常的
+![image](https://github.com/user-attachments/assets/0e81296b-eb98-4392-819e-83a78ee4e875)
+
 ◉然後專屬於你的discord機器人就上線啦!!!
