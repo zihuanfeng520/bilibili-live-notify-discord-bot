@@ -26,6 +26,7 @@ const roomId = '想監測的bilibili直播間id';
   
 其中2.discord頻道id 可在discord設定裡的進階選項開啟開發者模式後
 ![image](https://github.com/user-attachments/assets/a79ee7e9-13ce-413b-bb6e-d8ea88b43703)
+
 右鍵想讓機器人通知的頻道，最下面就是複製id的選項如下圖
 
 ![image](https://github.com/user-attachments/assets/10347246-6098-418b-a7b5-652d06993a78)
