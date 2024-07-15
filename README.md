@@ -4,11 +4,11 @@
 ## 使用教學事項
 
 ## 1.註冊Discord機器人
-請先用[https://discord.com/developers/applications](https://discord.com/developers/applications)  註冊一個Discord機器人，並把權限全開（我沒研究哪些權限用的到所以我全開）  
+◉請先用[https://discord.com/developers/applications](https://discord.com/developers/applications)  註冊一個Discord機器人，並把權限全開（我沒研究哪些權限用的到所以我全開）  
 ![image](https://github.com/user-attachments/assets/e9c5eef4-8c95-497f-aa23-4fbb6570e825)
 
 ## 2.下載並修改index檔案
-請在index檔案裡把9~11行const程式後的''裡面依序改成自己需要的內容
+◉請在index檔案裡把9~11行const程式後的''裡面依序改成自己需要的內容
 
 const token = 'discord機器人token';
 
@@ -39,7 +39,7 @@ const roomId = '想監測的bilibili直播間id';
 ◉註冊完後會分一組隨機不可改的密碼給你，我是都直接forgot password啦，因為他每次都會隨機分配
 ![image](https://github.com/user-attachments/assets/8d2337a8-878f-48fb-be06-9d1b9f4eb8db)
 
-註冊完後打開dashboard，點擊中間的黑色撥放鍵
+◉註冊完後打開dashboard，點擊中間的黑色撥放鍵
 ![image](https://github.com/user-attachments/assets/3cbfe0e5-90d6-4d64-aa6a-0257648daff0)
 
 ◉取好名字後按下底部的Deploy
@@ -62,4 +62,4 @@ const roomId = '想監測的bilibili直播間id';
 ◉然後按下Console後，在按下Start
 ![image](https://github.com/user-attachments/assets/326c84ee-8439-4dca-8f91-36589b98cae6)
 
-然後專屬於你的discord機器人就上線啦!!!
+◉然後專屬於你的discord機器人就上線啦!!!
