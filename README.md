@@ -7,7 +7,7 @@
 請先用[https://discord.com/developers/applications](https://discord.com/developers/applications)  註冊一個Discord機器人，並把權限全開（我沒研究哪些權限用的到所以我全開）  
 ![image](https://github.com/user-attachments/assets/e9c5eef4-8c95-497f-aa23-4fbb6570e825)
 
-## 2.修改index檔案
+## 2.下載並修改index檔案
 請在index檔案裡把9~11行const程式後的''裡面依序改成自己需要的內容
 
 const token = 'discord機器人token';
