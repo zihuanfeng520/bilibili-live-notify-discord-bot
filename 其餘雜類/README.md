@@ -10,6 +10,7 @@
 想改時區則把 timezone: 'Asia/Taipei' 後的 'Asia/Taipei'改為你想要的時區
 想改每天通知自檢時間則是把 cron.schedule('0 22 * * *', async () => { 改成 ('分鐘 小時 * * *', async () => {
 (如果不需要可以刪掉這兩段)
+
 ![image](https://github.com/user-attachments/assets/b450c31a-c58e-4140-a06b-1748ff104e84)
 
 ## 3.手動確認機器人是否正常運作
