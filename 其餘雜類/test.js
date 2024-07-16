@@ -81,7 +81,8 @@ async function checkLiveStatuses() {
 
     await Promise.all(roomIds.map(checkRoomStatus));
   } catch (error) {
-    console.error('錯誤：獲取直播房間信息時出現錯誤。', error);
+    const currentTime = new Date().toLocaleString('zh-TW', { timeZone: 'Asia/Taipei' });
+    console.error(`${currentTime} 錯誤：獲取直播房間信息時出現錯誤。`, error);
   }
 }
 
@@ -91,9 +92,11 @@ async function sendToAllChannels(message) {
       const channel = await client.channels.fetch(channelId);
       await channel.send(message);
     } catch (error) {
-      console.error(`錯誤：向頻道 ${channelId} 發送消息時出現錯誤。`, error);
+      const currentTime = new Date().toLocaleString('zh-TW', { timeZone: 'Asia/Taipei' });
+      console.error(`${currentTime} 錯誤：向頻道 ${channelId} 發送消息時出現錯誤。`, error);
     }
   }
 }
 
 client.login(token);
+
