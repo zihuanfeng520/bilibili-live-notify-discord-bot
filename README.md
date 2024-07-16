@@ -71,5 +71,6 @@ const roomId = '想監測的bilibili直播間id';
 ◉然後專屬於你的discord機器人就上線啦!!!
 
 ◉效果圖
+
 ![image](https://github.com/user-attachments/assets/8c3a4521-ff0f-4b04-b294-731d5305cd3d)
 
