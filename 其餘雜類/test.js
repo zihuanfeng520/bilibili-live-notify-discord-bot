@@ -99,4 +99,3 @@ async function sendToAllChannels(message) {
 }
 
 client.login(token);
-
