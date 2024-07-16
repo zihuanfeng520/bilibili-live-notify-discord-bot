@@ -27,6 +27,13 @@ client.once('ready', () => {
     timezone: 'Asia/Taipei'
   });
 
+  // 安排在 GMT+8 時區的每天早上10點發送消息
+  cron.schedule('00 10 * * *', async () => {
+    await sendToChannel('每天早上十點自檢！');
+  }, {
+    timezone: 'Asia/Taipei'
+  });
+
   // 安排在 GMT+8 時區的每天晚上10點發送消息
   cron.schedule('00 22 * * *', async () => {
     await sendToChannel('每天晚上十點自檢！');
@@ -51,7 +58,7 @@ async function checkLiveStatus() {
 
     const { data, code } = json;
     if (code !== 0 || !data) {
-      throw new Error('房間 ${roomId} 的 Bili API 回應錯誤狀態。');
+      throw new Error(`房間 ${roomId} 的 Bili API 回應錯誤狀態。`);
     }
 
     const { room_info, anchor_info } = data;
@@ -73,7 +80,8 @@ async function checkLiveStatus() {
       }
     }
   } catch (error) {
-    console.error('錯誤：獲取直播房間信息時出現錯誤。', error);
+    const errorMessage = getCurrentTimestamp() + ' 錯誤：獲取直播房間信息時出現錯誤。';
+    console.error(errorMessage, error);
   }
 }
 
@@ -82,8 +90,24 @@ async function sendToChannel(message) {
     const channel = await client.channels.fetch(channelId);
     await channel.send(message);
   } catch (error) {
-      console.error(`錯誤：向頻道 ${channelId} 發送消息時出現錯誤。`, error);
+    const errorMessage = getCurrentTimestamp() + ` 錯誤：向頻道 ${channelId} 發送消息時出現錯誤。`;
+    console.error(errorMessage, error);
   }
+}
+
+function getCurrentTimestamp() {
+  const now = new Date();
+  const options = {
+    timeZone: 'Asia/Taipei',
+    year: 'numeric',
+    month: '2-digit',
+    day: '2-digit',
+    hour: '2-digit',
+    minute: '2-digit',
+    second: '2-digit',
+    hour12: false
+  };
+  return new Intl.DateTimeFormat('zh-TW', options).format(now).replace(/[\u200E\u200F]/g, '');
 }
 
 client.login(token);
