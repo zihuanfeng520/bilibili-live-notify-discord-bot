@@ -3,7 +3,7 @@
 ## 各程式解釋
 
 ## 1.下載test.js
-請編輯圖中這個地方，依序為 discord機器人token/想要通知的頻道(請先確保機器人有在該伺服器中)/想要偵測的bilibili直播間 
+請編輯圖中這個地方，依序在''中放入 discord機器人token/想要通知的頻道(請先確保機器人有在該伺服器中)/想要偵測的bilibili直播間 
 ![image](https://github.com/user-attachments/assets/69b2bfec-c92a-44b4-bf0a-0e89580e03a0)
 
 ## 2.設定XX標準時間機器人會自動通知(我還在喔)確保託管並未斷線
