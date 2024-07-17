@@ -33,7 +33,14 @@ const roomId = '想監測的bilibili直播間id';
 
 ◉修改完後保存index.js檔案
 
-## 3.註冊 https://portal.daki.cc/ 帳號並託管機器人
+## 3.邀請機器人到伺服器
+請在剛剛創建機器人的網址中，於左側找到OAuth2選項，照圖中勾選bot 以及下方的Administrator，複製下方產生的連結，用瀏覽器打開
+![image](https://github.com/user-attachments/assets/b999dd5d-1705-4c88-b8f1-cca3c6e9b176)
+
+瀏覽器打開後應該如下圖，可以選擇想要機器人通知的伺服器
+![image](https://github.com/user-attachments/assets/e54a1f00-fef9-43f4-b338-46750992e58a)
+
+## 4.註冊 https://portal.daki.cc/ 帳號並託管機器人
 
 ◉如果是第一次註冊直接按下面的forgot password，因為這個網站沒有註冊按鈕
 (註冊時會要求Discord登入，綁定後完成下面設定就可以退出該Discord群組)
