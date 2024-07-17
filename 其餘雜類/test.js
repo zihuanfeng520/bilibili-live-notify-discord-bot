@@ -7,8 +7,8 @@ const ROOM_STATUS = {
 
 // Discord bot token and channel ID
 const token = '';
-const channelIds = ['', '']; // 假設這是兩個不同的頻道 ID
-const roomIds = ['', '', '']; // 假設這是三個不同的房間 ID
+const channelIds = ['', '']; // 假設這是兩個不同的頻道ID
+const roomIds = ['', '', '']; // 假設這是三個不同的房間ID
 
 const client = new Client({ intents: [GatewayIntentBits.Guilds, GatewayIntentBits.GuildMessages, GatewayIntentBits.MessageContent] });
 
@@ -82,7 +82,9 @@ async function checkLiveStatuses() {
     await Promise.all(roomIds.map(checkRoomStatus));
   } catch (error) {
     const currentTime = new Date().toLocaleString('zh-TW', { timeZone: 'Asia/Taipei' });
-    console.error(`${currentTime} 錯誤：獲取直播房間信息時出現錯誤。`, error);
+    const errorMessage = `${currentTime} 錯誤：獲取直播房間信息時出現錯誤。\n${error.message}`;
+    console.error(errorMessage);
+    await sendToAllChannels(errorMessage); // 發送錯誤信息到所有頻道
   }
 }
 
@@ -93,7 +95,9 @@ async function sendToAllChannels(message) {
       await channel.send(message);
     } catch (error) {
       const currentTime = new Date().toLocaleString('zh-TW', { timeZone: 'Asia/Taipei' });
-      console.error(`${currentTime} 錯誤：向頻道 ${channelId} 發送消息時出現錯誤。`, error);
+      const errorMessage = `${currentTime} 錯誤：向頻道 ${channelId} 發送消息時出現錯誤。\n${error.message}`;
+      console.error(errorMessage);
+      // 避免在此函數中進行遞歸調用，這裡只是記錄錯誤，不再發送錯誤消息以避免可能的循環
     }
   }
 }
