@@ -9,6 +9,7 @@ const ROOM_STATUS = {
 const token = '';
 const channelIds = ['', '']; // 假設這是兩個不同的頻道ID
 const roomIds = ['', '', '']; // 假設這是三個不同的房間ID
+const mentionedUserId = '';
 
 const client = new Client({ intents: [GatewayIntentBits.Guilds, GatewayIntentBits.GuildMessages, GatewayIntentBits.MessageContent] });
 
@@ -26,14 +27,14 @@ client.once('ready', () => {
 
   // 安排在 GMT+8 時區的每周一、三、五晚上8點發送消息
   cron.schedule('0 20 * * 1,3,5', async () => {
-    await sendToAllChannels('我還在喔');
+    await sendToAllChannels(`<@${mentionedUserId}> 我還在喔`);
   }, {
     timezone: 'Asia/Taipei'
   });
 
   // 安排在 GMT+8 時區的每天晚上10點發送消息
   cron.schedule('0 22 * * *', async () => {
-    await sendToAllChannels('每天晚上十點自檢！');
+    await sendToAllChannels(`<@${mentionedUserId}> 每天晚上十點自檢！`);
   }, {
     timezone: 'Asia/Taipei'
   });
@@ -70,10 +71,10 @@ async function checkLiveStatuses() {
         currentStatuses[roomId] = status; // 更新當前狀態
 
         if (status === ROOM_STATUS.ONLINE) {
-          const message = `---------------------------------------------------\n(${anchor_info.base_info.uname})的直播已開始！\n\n房間標題：${room_info.title}\n\n房間連結：https://live.bilibili.com/${room_info.room_id}\n\n[封面連結](${room_info.cover})\n---------------------------------------------------`;
+          const message = `---------------------------------------------------\n<@${mentionedUserId}>\n\n(${anchor_info.base_info.uname})的直播已開始！\n\n房間標題：${room_info.title}\n\n房間連結：https://live.bilibili.com/${room_info.room_id}\n\n[封面連結](${room_info.cover})\n---------------------------------------------------`;
           await sendToAllChannels(message);
         } else {
-          const message = `---------------------------------------------------\n(${anchor_info.base_info.uname})的直播已結束！\n\n房間標題：${room_info.title}\n\n房間連結：https://live.bilibili.com/${room_info.room_id}\n\n[封面連結](${room_info.cover})\n---------------------------------------------------`;
+          const message = `---------------------------------------------------\n<@${mentionedUserId}>\n\n(${anchor_info.base_info.uname})的直播已結束！\n\n房間標題：${room_info.title}\n\n房間連結：https://live.bilibili.com/${room_info.room_id}\n\n[封面連結](${room_info.cover})\n---------------------------------------------------`;
           await sendToAllChannels(message);
         }
       }
