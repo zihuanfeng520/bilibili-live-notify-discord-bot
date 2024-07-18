@@ -22,14 +22,14 @@ client.once('ready', () => {
 
   // 安排在 GMT+8 時區的每周一、三、五晚上8點發送消息
   cron.schedule('0 20 * * 1,3,5', async () => {
-    await sendToChannel('我還在喔');
+    await sendToChannel('<@586172509045522462> hanser直播前測試！');
   }, {
     timezone: 'Asia/Taipei'
   });
 
   // 安排在 GMT+8 時區的每天早上10點發送消息
   cron.schedule('00 10 * * *', async () => {
-    await sendToChannel('每天早上十點自檢！');
+    await sendToChannel('<@586172509045522462> 每天早上十點自檢！');
   }, {
     timezone: 'Asia/Taipei'
   });
@@ -45,7 +45,7 @@ client.once('ready', () => {
 // 監聽消息事件
 client.on('messageCreate', message => {
   if (message.content.toLowerCase().includes('bilibili bot')) {
-    message.reply('我還在喔');
+    message.reply('我還在喔！');
   }
 });
 
@@ -72,7 +72,7 @@ async function checkLiveStatus() {
       const channel = await client.channels.fetch(channelId);
 
       if (status === ROOM_STATUS.ONLINE) {
-        const message = `---------------------------------------------------\n(${anchor_info.base_info.uname})的直播已開始！\n\n房間標題：${room_info.title}\n\n房間鏈接：https://live.bilibili.com/${room_info.room_id}\n\n[封面連結](${room_info.cover})\n---------------------------------------------------`;
+        const message = `---------------------------------------------------\n<@586172509045522462>\n\n(${anchor_info.base_info.uname})的直播已開始！\n\n房間標題：${room_info.title}\n\n房間鏈接：https://live.bilibili.com/${room_info.room_id}\n\n[封面連結](${room_info.cover})\n---------------------------------------------------`;
         await channel.send(message);
       } else {
         const message = `---------------------------------------------------\n(${anchor_info.base_info.uname})的直播已結束！\n\n房間標題：${room_info.title}\n\n房間鏈接：https://live.bilibili.com/${room_info.room_id}\n\n[封面連結](${room_info.cover})\n---------------------------------------------------`;
