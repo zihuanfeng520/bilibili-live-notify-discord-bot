@@ -27,16 +27,16 @@ client.once('ready', () => {
     timezone: 'Asia/Taipei'
   });
 
-  // 安排在 GMT+8 時區的每天早上10點發送消息
-  cron.schedule('00 10 * * *', async () => {
-    await sendToChannel('每天早上十點自檢！');
+  // 安排在 GMT+8 時區的每天晚上10點發送消息
+  cron.schedule('00 22 * * *', async () => {
+    await sendToChannel('每天晚上十點自檢！');
   }, {
     timezone: 'Asia/Taipei'
   });
 
-  // 安排在 GMT+8 時區的每天晚上10點發送消息
-  cron.schedule('00 22 * * *', async () => {
-    await sendToChannel('每天晚上十點自檢！');
+  // 安排在 GMT+8 時區的每天早上10點發送消息
+  cron.schedule('00 10 * * *', async () => {
+    await sendToChannel('每天早上十點自檢！');
   }, {
     timezone: 'Asia/Taipei'
   });
@@ -52,13 +52,13 @@ client.on('messageCreate', message => {
 async function checkLiveStatus() {
   try {
     const fetch = await import('node-fetch').then(mod => mod.default); // 動態加載 node-fetch 模塊
-    const roomLiveInfoUrl = `https://api.live.bilibili.com/xlive/web-room/v1/index/getInfoByRoom?room_id=${roomId}`;
+    const roomLiveInfoUrl = https://api.live.bilibili.com/xlive/web-room/v1/index/getInfoByRoom?room_id=${roomId};
     const response = await fetch(roomLiveInfoUrl);
     const json = await response.json();
 
     const { data, code } = json;
     if (code !== 0 || !data) {
-      throw new Error(`房間 ${roomId} 的 Bili API 回應錯誤狀態。`);
+      throw new Error('房間 ${roomId} 的 Bili API 回應錯誤狀態。');
     }
 
     const { room_info, anchor_info } = data;
@@ -72,17 +72,15 @@ async function checkLiveStatus() {
       const channel = await client.channels.fetch(channelId);
 
       if (status === ROOM_STATUS.ONLINE) {
-        const message = `---------------------------------------------------\n(${anchor_info.base_info.uname})的直播已開始！\n\n房間標題：${room_info.title}\n\n房間鏈接：https://live.bilibili.com/${room_info.room_id}\n\n[封面連結](${room_info.cover})\n---------------------------------------------------`;
+        const message = ----------------------------------------------------\n(${anchor_info.base_info.uname})的直播已開始！\n\n房間標題：${room_info.title}\n\n房間鏈接：https://live.bilibili.com/${room_info.room_id}\n\n[封面連結](${room_info.cover})\n----------------------------------------------------;
         await channel.send(message);
       } else {
-        const message = `---------------------------------------------------\n(${anchor_info.base_info.uname})的直播已結束！\n\n房間標題：${room_info.title}\n\n房間鏈接：https://live.bilibili.com/${room_info.room_id}\n\n[封面連結](${room_info.cover})\n---------------------------------------------------`;
+        const message = ----------------------------------------------------\n(${anchor_info.base_info.uname})的直播已結束！\n\n房間標題：${room_info.title}\n\n房間鏈接：https://live.bilibili.com/${room_info.room_id}\n\n[封面連結](${room_info.cover})\n----------------------------------------------------;
         await channel.send(message);
       }
     }
   } catch (error) {
-    const errorMessage = getCurrentTimestamp() + ' 錯誤：獲取直播房間信息時出現錯誤。';
-    console.error(errorMessage, error);
-    await sendErrorLog(errorMessage, error);
+    console.error('錯誤：獲取直播房間信息時出現錯誤。', error);
   }
 }
 
@@ -91,34 +89,8 @@ async function sendToChannel(message) {
     const channel = await client.channels.fetch(channelId);
     await channel.send(message);
   } catch (error) {
-    const errorMessage = getCurrentTimestamp() + ` 錯誤：向頻道 ${channelId} 發送消息時出現錯誤。`;
-    console.error(errorMessage, error);
-    await sendErrorLog(errorMessage, error);
+      console.error(錯誤：向頻道 ${channelId} 發送消息時出現錯誤。, error);
   }
-}
-
-async function sendErrorLog(message, error) {
-  try {
-    const channel = await client.channels.fetch(channelId);
-    await channel.send(`${message}\n\`\`\`${error.stack}\`\`\``);
-  } catch (sendError) {
-    console.error('錯誤：向頻道發送錯誤日志時出現錯誤。', sendError);
-  }
-}
-
-function getCurrentTimestamp() {
-  const now = new Date();
-  const options = {
-    timeZone: 'Asia/Taipei',
-    year: 'numeric',
-    month: '2-digit',
-    day: '2-digit',
-    hour: '2-digit',
-    minute: '2-digit',
-    second: '2-digit',
-    hour12: false
-  };
-  return new Intl.DateTimeFormat('zh-TW', options).format(now).replace(/[\u200E\u200F]/g, '');
 }
 
 client.login(token);
