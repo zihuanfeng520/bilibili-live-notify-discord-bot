@@ -7,8 +7,8 @@ const ROOM_STATUS = {
 
 // Discord bot token and channel ID
 const token = '';
-const channelIds = ['', '']; // 假設這是兩個不同的頻道ID
-const roomIds = ['', '', '']; // 假設這是三個不同的房間ID
+const channelIds = ['', '']; // 假設這是兩個不同的頻道 ID
+const roomIds = ['', '', '']; // 假設這是三個不同的房間 ID
 
 const client = new Client({ intents: [GatewayIntentBits.Guilds, GatewayIntentBits.GuildMessages, GatewayIntentBits.MessageContent] });
 
@@ -51,13 +51,13 @@ async function checkLiveStatuses() {
     const fetch = await import('node-fetch').then(mod => mod.default); // 動態加載 node-fetch 模塊
 
     const checkRoomStatus = async (roomId) => {
-      const roomLiveInfoUrl = `https://api.live.bilibili.com/xlive/web-room/v1/index/getInfoByRoom?room_id=${roomId}`;
+      const roomLiveInfoUrl = https://api.live.bilibili.com/xlive/web-room/v1/index/getInfoByRoom?room_id=${roomId};
       const response = await fetch(roomLiveInfoUrl);
       const json = await response.json();
 
       const { data, code } = json;
       if (code !== 0 || !data) {
-        throw new Error(`房間 ${roomId} 的 Bili API 回應錯誤狀態。`);
+        throw new Error(房間 ${roomId} 的 Bili API 回應錯誤狀態。);
       }
 
       const { room_info, anchor_info } = data;
@@ -70,10 +70,10 @@ async function checkLiveStatuses() {
         currentStatuses[roomId] = status; // 更新當前狀態
 
         if (status === ROOM_STATUS.ONLINE) {
-          const message = `---------------------------------------------------\n(${anchor_info.base_info.uname})的直播已開始！\n\n房間標題：${room_info.title}\n\n房間連結：https://live.bilibili.com/${room_info.room_id}\n\n[封面連結](${room_info.cover})\n---------------------------------------------------`;
+          const message = ----------------------------------------------------\n(${anchor_info.base_info.uname})的直播已開始！\n\n房間標題：${room_info.title}\n\n房間連結：https://live.bilibili.com/${room_info.room_id}\n\n[封面連結](${room_info.cover})\n----------------------------------------------------;
           await sendToAllChannels(message);
         } else {
-          const message = `---------------------------------------------------\n(${anchor_info.base_info.uname})的直播已結束！\n\n房間標題：${room_info.title}\n\n房間連結：https://live.bilibili.com/${room_info.room_id}\n\n[封面連結](${room_info.cover})\n---------------------------------------------------`;
+          const message = ----------------------------------------------------\n(${anchor_info.base_info.uname})的直播已結束！\n\n房間標題：${room_info.title}\n\n房間連結：https://live.bilibili.com/${room_info.room_id}\n\n[封面連結](${room_info.cover})\n----------------------------------------------------;
           await sendToAllChannels(message);
         }
       }
@@ -81,10 +81,7 @@ async function checkLiveStatuses() {
 
     await Promise.all(roomIds.map(checkRoomStatus));
   } catch (error) {
-    const currentTime = new Date().toLocaleString('zh-TW', { timeZone: 'Asia/Taipei' });
-    const errorMessage = `${currentTime} 錯誤：獲取直播房間信息時出現錯誤。\n${error.message}`;
-    console.error(errorMessage);
-    await sendToAllChannels(errorMessage); // 發送錯誤信息到所有頻道
+    console.error('錯誤：獲取直播房間信息時出現錯誤。', error);
   }
 }
 
@@ -94,10 +91,7 @@ async function sendToAllChannels(message) {
       const channel = await client.channels.fetch(channelId);
       await channel.send(message);
     } catch (error) {
-      const currentTime = new Date().toLocaleString('zh-TW', { timeZone: 'Asia/Taipei' });
-      const errorMessage = `${currentTime} 錯誤：向頻道 ${channelId} 發送消息時出現錯誤。\n${error.message}`;
-      console.error(errorMessage);
-      // 避免在此函數中進行遞歸調用，這裡只是記錄錯誤，不再發送錯誤消息以避免可能的循環
+      console.error(錯誤：向頻道 ${channelId} 發送消息時出現錯誤。, error);
     }
   }
 }
