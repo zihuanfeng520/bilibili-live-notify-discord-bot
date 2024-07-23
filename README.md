@@ -144,7 +144,7 @@ const roomId = '想監測的bilibili直播間id';
  nano bot.js
  ```
  在這裡貼上你修改好的 `index.js` 內容，並儲存：
- 儲存並退出 `nano`：按 `Ctrl + X`，然後按 `Ctrl + Y`，再按 `Enter`。
+ 儲存並退出 nano：按 `Ctrl + X`，然後按 `Ctrl + Y`，再按 `Enter`。
 
 7. 運行你的 bot：
  ```sh
