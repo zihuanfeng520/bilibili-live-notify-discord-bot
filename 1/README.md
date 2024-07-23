@@ -22,7 +22,8 @@
 
    - **Discord 機器人 token**：點擊「Reset Token」獲取，請妥善保存，因為離開頁面後無法再次讀取。 ![Token 獲取](https://github.com/user-attachments/assets/33c92d70-7d41-43a1-a609-eddc676a5538)
    - **Discord 頻道 ID**：啟用 Discord 的開發者模式後，右鍵點擊頻道並選擇「複製 ID」。 ![頻道 ID](https://github.com/user-attachments/assets/a79ee7e9-13ce-413b-bb6e-d8ea88b43703) 
-   - **右鍵想讓機器人通知的頻道，最下面就是複製id的選項如下圖**：![複製 ID](https://github.com/user-attachments/assets/10347246-6098-418b-a7b5-652d06993a78)
+   - **右鍵想讓機器人通知的頻道，最下面就是複製id的選項如下圖**
+     ![複製 ID](https://github.com/user-attachments/assets/10347246-6098-418b-a7b5-652d06993a78)
 
 - **直播間 ID**：從 `https://live.bilibili.com/XXXXXXX` 中取得 `XXXXXXX`。
 
