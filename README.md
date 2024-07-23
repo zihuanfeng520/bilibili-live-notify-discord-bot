@@ -131,7 +131,9 @@ const roomId = '想監測的bilibili直播間id';
  ```
 
  儲存並退出 `nano`：按 `Ctrl + X`，然後按 `Ctrl + Y`，再按 `Enter`。
+ 
 ![image](https://github.com/user-attachments/assets/c38bec4a-0c31-45ba-8063-18d1e531b08c)
+
 5. 安裝專案依賴：
  ```sh
  npm install
