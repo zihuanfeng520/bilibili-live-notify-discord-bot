@@ -81,3 +81,140 @@ const roomId = '想監測的bilibili直播間id';
 
 ![image](https://github.com/user-attachments/assets/8c3a4521-ff0f-4b04-b294-731d5305cd3d)
 
+## 5.使用安卓手機運行機器人
+
+◉1.安装 Termux [Google Play 連結](https://play.google.com/store/apps/details?id=com.termux&hl=zh_TW)
+
+◉2.運行以下程式碼
+1. 更新並升級 Termux 套件：
+ ```sh
+ pkg update
+ pkg upgrade
+ ```
+
+2. 安裝 Node.js：
+ ```sh
+ pkg install nodejs
+ ```
+
+3. 建立專案目錄並進入：
+ ```sh
+ mkdir my-bot
+ cd my-bot
+ ```
+
+4. 建立 `package.json` 檔案：
+ ```sh
+ nano package.json
+ ```
+ 然後貼上以下內容並儲存：
+
+ ```json
+ {
+ "name": "nodejs",
+ "version": "1.0.0",
+ "description": "",
+ "main": "index.js",
+ "scripts": {
+ "test": "echo \"Error: no test specified\" && exit 1"
+ },
+ "keywords": [],
+ "author": "",
+ "license": "ISC",
+ "dependencies": {
+ "@types/node": "^18.0.6",
+ "discord.js": "^14.15.3",
+ "node-fetch": "^3.3.2",
+ "node-cron": "^3.0.0"
+ }
+ }
+ ```
+
+ 儲存並退出 `nano`：按 `Ctrl + X`，然後按 `Ctrl + Y`，再按 `Enter`。
+
+5. 安裝專案依賴：
+ ```sh
+ npm install
+ ```
+
+6. 建立 `bot.js` 檔案：
+ ```sh
+ nano bot.js
+ ```
+ 在這裡貼上你修改好的 `index.js` 內容，並儲存：
+ 儲存並退出 `nano`：按 `Ctrl + X`，然後按 `Ctrl + Y`，再按 `Enter`。
+
+7. 運行你的 bot：
+ ```sh
+ node bot.js
+ ```
+
+### 設定自啟動
+
+1. 安裝 Node.js（如果尚未安裝）：
+ ```sh
+ pkg install nodejs
+ ```
+
+2. 編輯 `~/.bashrc` 檔案：
+ ```sh
+ nano ~/.bashrc
+ ```
+ 然後在文件末尾添加以下內容：
+
+ ```sh
+ cd ~/my-bot
+ node bot.js &
+ ```
+
+ 儲存並退出 `nano`：按 `Ctrl + X`，然後按 `Ctrl + Y`，再按 `Enter`。
+
+3. 使更改生效：
+ ```sh
+ source ~/.bashrc
+ ```
+◉pkg update
+◉pkg upgrade
+◉pkg install nodejs
+◉mkdir my-bot
+◉cd my-bot
+
+◉nano package.json
+後 貼上
+
+{
+  "name": "nodejs",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "dependencies": {
+    "@types/node": "^18.0.6",
+    "discord.js": "^14.15.3",
+    "node-fetch": "^3.3.2",
+    "node-cron": "^3.0.0"
+  }
+}
+
+保存後並退出 nano：按 Ctrl + X後 按Ctrl + Y 並按 Enter 退出
+![image](https://github.com/user-attachments/assets/c38bec4a-0c31-45ba-8063-18d1e531b08c)
+
+◉npm install
+nano bot.js
+在這裡貼上你修改好的index.js內文
+保存後並退出 nano：按 Ctrl + X後 按Ctrl + Y 並按 Enter 退出
+◉node bot.js
+
+接下來是開啟termux自啟動機器人的程式碼
+◉pkg install nodejs
+◉nano ~/.bashrc
+後輸入
+◉cd ~/my-bot
+◉node bot.js &
+保存後並退出 nano：按 Ctrl + X後 按Ctrl + Y 並按 Enter 退出
+◉source ~/.bashrc
