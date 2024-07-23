@@ -152,7 +152,7 @@
 
     下次重啟後，Termux 將會自動運行機器人！
 
-3.一鍵複製代碼(須把index.js放入裡面)
+一鍵複製代碼(須把index.js放入裡面)
 
 ```bash
 pkg update && \
