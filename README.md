@@ -57,7 +57,7 @@
    
    ![Portal Servers](https://github.com/user-attachments/assets/8c3a4521-ff0f-4b04-b294-731d5305cd3d)
 
-### 5. 使用安卓手機運行機器人
+### 5. 使用安卓手機運行機器人(下面有一鍵運行腳本)
 
 1. 安裝 [Termux](https://play.google.com/store/apps/details?id=com.termux&hl=zh_TW)。
 2. 運行以下程式碼：
@@ -152,15 +152,10 @@
 
     下次重啟後，Termux 將會自動運行機器人！
 
-一鍵複製代碼(須把index.js放入裡面)
+一鍵執行腳本(須把index.js放入裡面，腳本運行到一半會請求後台運行權限請開無限制)
 
 ```bash
-pkg update && \
-pkg upgrade && \
-pkg install nodejs && \
-mkdir -p ~/my-bot && \
-cd ~/my-bot && \
-echo '{
+pkg update -y && pkg upgrade -y && pkg install -y nodejs && mkdir -p my-bot && cd my-bot && echo '{
   "name": "nodejs",
   "version": "1.0.0",
   "description": "",
@@ -177,12 +172,16 @@ echo '{
     "node-fetch": "^3.3.2",
     "node-cron": "^3.0.0"
   }
-}' > package.json && \
-npm install && \
-echo '/* 把index.js內文放這裡 */' > bot.js && \
-echo -e '\n# Start bot script\ncd ~/my-bot\nnode bot.js &' >> ~/.bashrc && \
-termux-wake-lock && \
-source ~/.bashrc
+}' > package.json && npm install && cat << 'EOF' > bot.js
+
+(把這句刪掉替換成你的index.js)
+
+EOF
+
+echo '
+cd ~/my-bot
+node bot.js &
+termux-wake-lock' >> ~/.bashrc && source ~/.bashrc && node bot.js
 ```
 
 ### 6. 開機自啟動Termux並鎖定背景運作
