@@ -130,7 +130,7 @@ const roomId = '想監測的bilibili直播間id';
  }
  ```
 
- 儲存並退出 `nano`：按 `Ctrl + X`，然後按 `Ctrl + Y`，再按 `Enter`。
+ 儲存並退出 nano：按 `Ctrl + X`，然後按 `Ctrl + Y`，再按 `Enter`。
  
 ![image](https://github.com/user-attachments/assets/c38bec4a-0c31-45ba-8063-18d1e531b08c)
 
@@ -175,33 +175,3 @@ const roomId = '想監測的bilibili直播間id';
  ```sh
  source ~/.bashrc
  ```
-◉pkg update
-◉pkg upgrade
-◉pkg install nodejs
-◉mkdir my-bot
-◉cd my-bot
-
-◉nano package.json
-後 貼上
-
-{
-  "name": "nodejs",
-  "version": "1.0.0",
-  "description": "",
-  "main": "index.js",
-  "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1"
-  },
-  "keywords": [],
-  "author": "",
-  "license": "ISC",
-  "dependencies": {
-    "@types/node": "^18.0.6",
-    "discord.js": "^14.15.3",
-    "node-fetch": "^3.3.2",
-    "node-cron": "^3.0.0"
-  }
-}
-
-保存後並退出 nano：按 Ctrl + X後 按Ctrl + Y 並按 Enter 退出
-![image](https://github.com/user-attachments/assets/c38bec4a-0c31-45ba-8063-18d1e531b08c)
