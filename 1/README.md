@@ -38,6 +38,7 @@
 3. 打開 Dashboard，點擊中間的黑色播放鍵。 ![Dashboard](https://github.com/user-attachments/assets/3cbfe0e5-90d6-4d64-aa6a-0257648daff0)
 4. 命名專案後按下底部的 **Deploy**。 ![Deploy](https://github.com/user-attachments/assets/7153236c-0d96-420e-8517-8363ad3bf277)
 5. 點擊 **Portal Servers** 下方剛取的名字，登入後選擇「Forgot Password」來顯示並複製密碼。
+   
    ![Portal Servers](https://github.com/user-attachments/assets/62d7f314-200d-4eff-a7af-ea9076efad0a)
    
 6. 點擊 **Control**，然後 **Files**。 ![Control](https://github.com/user-attachments/assets/da0dc96d-2306-4ada-9ae5-7800f45a26ed) ![Files](https://github.com/user-attachments/assets/6e8485b8-ce7e-455a-ae97-841d8125b16d)
@@ -45,7 +46,10 @@
 8. 點擊 **Console** 然後 **Start**。 ![Console](https://github.com/user-attachments/assets/326c84ee-8439-4dca-8f91-36589b98cae6)
 9. 初次運行會顯示一些代碼，這是正常的。 ![運行](https://github.com/user-attachments/assets/0e81296b-eb98-4392-819e-83a78ee4e875)
 
-   現在你的 Discord 機器人就上線了！ ![效果圖](https://github.com/user-attachments/assets/8c3a4521-ff0f-4b04-b294-731d5305cd3d)
+   現在你的 Discord 機器人就上線了！ 
+   
+   效果圖 
+   ![Portal Servers](https://github.com/user-attachments/assets/8c3a4521-ff0f-4b04-b294-731d5305cd3d)
 
 ### 5. 使用安卓手機運行機器人
 
