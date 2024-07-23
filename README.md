@@ -152,6 +152,39 @@
 
     下次重啟後，Termux 將會自動運行機器人！
 
+3.一鍵複製代碼(須把index.js放入裡面)
+
+```bash
+pkg update && \
+pkg upgrade && \
+pkg install nodejs && \
+mkdir -p ~/my-bot && \
+cd ~/my-bot && \
+echo '{
+  "name": "nodejs",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "dependencies": {
+    "@types/node": "^18.0.6",
+    "discord.js": "^14.15.3",
+    "node-fetch": "^3.3.2",
+    "node-cron": "^3.0.0"
+  }
+}' > package.json && \
+npm install && \
+echo '/* 把index.js內文放這裡 */' > bot.js && \
+echo -e '\n# Start bot script\ncd ~/my-bot\nnode bot.js &' >> ~/.bashrc && \
+termux-wake-lock && \
+source ~/.bashrc
+```
+
 ### 6. 開機自啟動Termux並鎖定背景運作
 
 #### 使用 AutoStart - No root 應用程序
