@@ -159,9 +159,13 @@
 我們使用 [AutoStart - No root](https://play.google.com/store/apps/details?id=com.autostart&hl=zh_TW) 應用程序來實現這一功能。請按照以下步驟進行配置：
 
 1. 安裝AutoStart - No root應用程序，並啟動應用。
-2. 如圖所示，將Auto startup設置為“on”。
+
    ![image](https://github.com/user-attachments/assets/690df809-4f63-4820-a355-a2a6ef61c0cd)
+
+2. 如圖所示，將Auto startup設置為“on”。
+
+   ![image](https://github.com/user-attachments/assets/1e4b67a6-b13c-4c65-ad48-42f8b83f37a1)
+
 3. 在Applications列表中選擇Termux。
 4. 設置兩個秒數，分別為10和5秒。
 5. 勾選下面所有選項。
-   ![image](https://github.com/user-attachments/assets/1e4b67a6-b13c-4c65-ad48-42f8b83f37a1)
