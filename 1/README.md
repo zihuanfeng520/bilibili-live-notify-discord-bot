@@ -47,8 +47,10 @@
 9. 初次運行會顯示一些代碼，這是正常的。 ![運行](https://github.com/user-attachments/assets/0e81296b-eb98-4392-819e-83a78ee4e875)
 
    現在你的 Discord 機器人就上線了！ 
+
    
-   效果圖 
+   效果圖
+   
    ![Portal Servers](https://github.com/user-attachments/assets/8c3a4521-ff0f-4b04-b294-731d5305cd3d)
 
 ### 5. 使用安卓手機運行機器人
