@@ -131,7 +131,7 @@ const roomId = '想監測的bilibili直播間id';
  ```
 
  儲存並退出 `nano`：按 `Ctrl + X`，然後按 `Ctrl + Y`，再按 `Enter`。
-
+![image](https://github.com/user-attachments/assets/c38bec4a-0c31-45ba-8063-18d1e531b08c)
 5. 安裝專案依賴：
  ```sh
  npm install
@@ -203,18 +203,3 @@ const roomId = '想監測的bilibili直播間id';
 
 保存後並退出 nano：按 Ctrl + X後 按Ctrl + Y 並按 Enter 退出
 ![image](https://github.com/user-attachments/assets/c38bec4a-0c31-45ba-8063-18d1e531b08c)
-
-◉npm install
-nano bot.js
-在這裡貼上你修改好的index.js內文
-保存後並退出 nano：按 Ctrl + X後 按Ctrl + Y 並按 Enter 退出
-◉node bot.js
-
-接下來是開啟termux自啟動機器人的程式碼
-◉pkg install nodejs
-◉nano ~/.bashrc
-後輸入
-◉cd ~/my-bot
-◉node bot.js &
-保存後並退出 nano：按 Ctrl + X後 按Ctrl + Y 並按 Enter 退出
-◉source ~/.bashrc
