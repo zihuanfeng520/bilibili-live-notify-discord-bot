@@ -166,6 +166,6 @@
 
    ![image](https://github.com/user-attachments/assets/1e4b67a6-b13c-4c65-ad48-42f8b83f37a1)
 
-3. 在Applications列表中選擇Termux。
+3. 點擊在Applications後的add，並在列表中選擇Termux。
 4. 設置兩個秒數，分別為10和5秒。
 5. 勾選下面所有選項。
