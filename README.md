@@ -174,7 +174,7 @@ pkg update -y && pkg upgrade -y && pkg install -y nodejs && mkdir -p my-bot && c
   }
 }' > package.json && npm install && cat << 'EOF' > bot.js
 
-(把這句刪掉替換成你的index.js)
+(把這句連同括弧刪掉替換成你的index.js)
 
 EOF
 
