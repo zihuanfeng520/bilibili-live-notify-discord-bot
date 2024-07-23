@@ -37,7 +37,9 @@
 2. 註冊後會獲得一組隨機密碼，建議記下或使用「Forgot Password」來重新獲取。 ![註冊頁面](https://github.com/user-attachments/assets/8d2337a8-878f-48fb-be06-9d1b9f4eb8db)
 3. 打開 Dashboard，點擊中間的黑色播放鍵。 ![Dashboard](https://github.com/user-attachments/assets/3cbfe0e5-90d6-4d64-aa6a-0257648daff0)
 4. 命名專案後按下底部的 **Deploy**。 ![Deploy](https://github.com/user-attachments/assets/7153236c-0d96-420e-8517-8363ad3bf277)
-5. 點擊 **Portal Servers** 下方剛取的名字，登入後選擇「Forgot Password」來顯示並複製密碼。 ![Portal Servers](https://github.com/user-attachments/assets/62d7f314-200d-4eff-a7af-ea9076efad0a)
+5. 點擊 **Portal Servers** 下方剛取的名字，登入後選擇「Forgot Password」來顯示並複製密碼。
+   ![Portal Servers](https://github.com/user-attachments/assets/62d7f314-200d-4eff-a7af-ea9076efad0a)
+   
 6. 點擊 **Control**，然後 **Files**。 ![Control](https://github.com/user-attachments/assets/da0dc96d-2306-4ada-9ae5-7800f45a26ed) ![Files](https://github.com/user-attachments/assets/6e8485b8-ce7e-455a-ae97-841d8125b16d)
 7. 選擇 **Upload** 上傳 `index.js` 和 `package.json`。 ![Upload](https://github.com/user-attachments/assets/900cc8e9-5516-4b10-9fec-18176c2f0e57)
 8. 點擊 **Console** 然後 **Start**。 ![Console](https://github.com/user-attachments/assets/326c84ee-8439-4dca-8f91-36589b98cae6)
