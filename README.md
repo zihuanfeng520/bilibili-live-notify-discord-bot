@@ -107,7 +107,7 @@ const roomId = '想監測的bilibili直播間id';
  ```sh
  nano package.json
  ```
- 然後貼上以下內容並儲存：
+然後在文件中貼上以下內容並儲存：
 
  ```json
  {
@@ -157,7 +157,7 @@ const roomId = '想監測的bilibili直播間id';
  ```sh
  nano ~/.bashrc
  ```
- 然後在文件末尾添加以下內容：
+ 然後在文件中添加以下內容：
 
  ```sh
  cd ~/my-bot
