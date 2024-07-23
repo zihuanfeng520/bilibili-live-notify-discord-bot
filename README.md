@@ -153,12 +153,7 @@ const roomId = '想監測的bilibili直播間id';
 
 ### 設定自啟動
 
-1. 安裝 Node.js（如果尚未安裝）：
- ```sh
- pkg install nodejs
- ```
-
-2. 編輯 `~/.bashrc` 檔案：
+1. 編輯 `~/.bashrc` 檔案：
  ```sh
  nano ~/.bashrc
  ```
@@ -171,7 +166,8 @@ const roomId = '想監測的bilibili直播間id';
 
  儲存並退出 `nano`：按 `Ctrl + X`，然後按 `Ctrl + Y`，再按 `Enter`。
 
-3. 使更改生效：
+2. 使更改生效：
  ```sh
  source ~/.bashrc
  ```
+這樣下次重開機後開啟termux就會自動運行機器人啦!
