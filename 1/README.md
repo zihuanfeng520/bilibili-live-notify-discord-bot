@@ -35,7 +35,7 @@
 1. 在 Discord 開發者平台的 **OAuth2** 中勾選 **bot** 和 **Administrator** 權限，複製生成的連結並在瀏覽器中打開。 ![OAuth2 設定](https://github.com/user-attachments/assets/b999dd5d-1705-4c88-b8f1-cca3c6e9b176)
 2. 在瀏覽器中，選擇要邀請機器人的伺服器。 ![選擇伺服器](https://github.com/user-attachments/assets/e54a1f00-fef9-43f4-b338-46750992e58a)
 
-### 4. 註冊 [Daki](https://portal.daki.cc/) https://portal.daki.cc/帳號並託管機器人
+### 4. 註冊 [Daki](https://portal.daki.cc/) https://portal.daki.cc/ 帳號並託管機器人
 
 1. 註冊時點擊「Forgot Password」，因為該網站沒有註冊按鈕。註冊時會要求用 Discord 登入，完成後可退出該 Discord 群組。
 2. 註冊後會獲得一組隨機密碼，建議記下或使用「Forgot Password」來重新獲取。 ![註冊頁面](https://github.com/user-attachments/assets/8d2337a8-878f-48fb-be06-9d1b9f4eb8db)
