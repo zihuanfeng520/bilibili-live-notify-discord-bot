@@ -152,7 +152,7 @@
 
     下次重啟後，Termux 將會自動運行機器人！
 
-一鍵執行腳本(須把index.js放入裡面，腳本運行到一半會請求後台運行權限請開無限制)
+一鍵termux執行腳本(須把index.js放入裡面，腳本運行到一半會請求後台運行權限請開無限制)
 
 ```bash
 pkg update -y && pkg upgrade -y && pkg install -y nodejs && mkdir -p my-bot && cd my-bot && echo '{
