@@ -5,9 +5,10 @@ from discord.ext import tasks
 from datetime import datetime
 
 # Discord bot token 和頻道 ID
-TOKEN = ''
-CHANNEL_ID =   # 確保這是一个整數
-ROOM_ID = ''
+TOKEN = ''  # 填入你的 Discord bot token
+CHANNEL_ID =   # 填入你的頻道 ID，確保這是一个整數
+USER_ID = ''  # 填入要 @ 的用户 ID
+ROOM_ID = ''  # 填入你的 Bilibili room ID
 
 # 創建 Discord 客戶端實例
 intents = discord.Intents.default()
@@ -37,7 +38,7 @@ async def on_message(message):
 
     # 檢查消息內容是否包含關鍵字
     if 'bilibili bot' in message.content.lower():
-        await message.channel.send('我還在喔!')
+        await message.channel.send(f'<@{USER_ID}> 我還在喔!')
 
 @tasks.loop(minutes=1)
 async def check_live_status():
@@ -66,24 +67,31 @@ async def check_live_status():
         if live_status == 1:
             status = 'ONLINE'
         elif live_status == 2:
-            status = 'OFFLINE'  # 或者根據實際需要調整為其他狀態
+            status = 'OFFLINE'
 
         if status != current_status:
             current_status = status
             channel = client.get_channel(CHANNEL_ID)
+            username = anchor_info["base_info"]["uname"]
+            room_title = room_info["title"]
+            room_link = f'https://live.bilibili.com/{room_info["room_id"]}'
+            cover_link = room_info["cover"]
+            
             if status == 'ONLINE':
                 message = (f'---------------------------------------------------\n'
-                           f'({anchor_info["base_info"]["uname"]})的直播已開始！\n\n'
-                           f'房間標題：{room_info["title"]}\n\n'
-                           f'房間連結：https://live.bilibili.com/{room_info["room_id"]}\n\n'
-                           f'[封面連結]({room_info["cover"]})\n'
+                           f'<@{USER_ID}>\n\n'
+                           f'({username})的直播已開始！\n\n'
+                           f'房間標題：{room_title}\n\n'
+                           f'房間連結：{room_link}\n\n'
+                           f'[封面連結]({cover_link})\n'
                            f'---------------------------------------------------')
             else:
                 message = (f'---------------------------------------------------\n'
-                           f'({anchor_info["base_info"]["uname"]})的直播已結束！\n\n'
-                           f'房間標題：{room_info["title"]}\n\n'
-                           f'房間連結：https://live.bilibili.com/{room_info["room_id"]}\n\n'
-                           f'[封面連結]({room_info["cover"]})\n'
+                           f'<@{USER_ID}>\n\n'
+                           f'({username})的直播已結束！\n\n'
+                           f'房間標題：{room_title}\n\n'
+                           f'房間連結：{room_link}\n\n'
+                           f'[封面連結]({cover_link})\n'
                            f'---------------------------------------------------')
             await channel.send(message)
     except Exception as e:
@@ -91,15 +99,15 @@ async def check_live_status():
         print(error_message, e)
         await send_error_log(error_message, e)
 
-@tasks.loop(seconds=30)  # 每 30 秒檢查一次調度消息
+@tasks.loop(minutes=1)  # 每 1 分鐘檢查一次調度消息
 async def schedule_messages():
     now = datetime.now()
     if now.weekday() in [0, 2, 4] and now.hour == 20 and now.minute == 0:  # 周一、三、五的晚上8點
-        await send_to_channel('hanser直播前測試!')
+        await send_to_channel(f'<@{USER_ID}> hanser直播前測試!')
     if now.hour == 10 and now.minute == 0:  # 每天早上10點
-        await send_to_channel('每天早上十點自檢！')
+        await send_to_channel(f'<@{USER_ID}> 每天早上十點自檢！')
     if now.hour == 22 and now.minute == 0:  # 每天晚上10點
-        await send_to_channel('每天晚上十點自檢！')
+        await send_to_channel(f'<@{USER_ID}> 每天晚上十點自檢！')
 
 async def send_to_channel(message):
     try:
@@ -122,4 +130,5 @@ def get_current_timestamp():
     return now.strftime('%Y-%m-%d %H:%M:%S')
 
 client.run(TOKEN)
+
 
